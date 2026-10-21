@@ -2,7 +2,7 @@
 
 ami_id="ami-0055977a6e828a4f4"
 instance_type="t3.micro"
-domain_name="daws92s.store"
+domain_name="daws92k.store"
 hosted_zone_id="Z01595761DU8O4AX48D6A"
 
 for instance in $@
