@@ -1,7 +1,8 @@
 #!/bin/bash
+
 user_id=$(id -u)
 logs_folder="/var/log/roboshop"
-logs_file="${logs_folder}/${0}.log
+logs_file="${logs_folder}/${0}.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -25,12 +26,13 @@ validate(){
     fi
 }
 
+
 cp mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? "Adding mongo repo"
 
 dnf install mongodb-org -y &>> $logs_file
-validate $? "Install Mongodb"
+validate $? "Install MongDB"
 
-systemctl enable mongod  &>> $logs_file
-systemctl start mongod   &>> $logs_file
-validate $? "Enable and Start Mongodb"
+systemctl enable mongod &>> $logs_file
+systemctl start mongod &>> $logs_file
+validate $? "Enable and start MongoDB"
